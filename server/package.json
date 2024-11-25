@@ -1,0 +1,25 @@
+{
+  "note": "npm init command for setup node js project(package.json),type:module is use for import at place of requires",
+  "name": "real-time-chat-server",
+  "version": "1.0.0",
+  "description": "this is real time chat app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "serverRun":"nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com-second/Pawanjhajha/real-time-chat-aap.git"
+  },
+  "author": "pawan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  }
+}
