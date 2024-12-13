@@ -22,8 +22,14 @@ const userSchema=new mongoose.Schema({
         required:false,
     }
 
-},{timestamps:true});
+},{timestamps:true,toJSON:{virtuals:true},toObject:{virtuals:true}});
 //create the indexing on the email 
+userSchema.virtual('name').get(function(){
+    if (this.firstName || this.lastName) {
+        return [this.firstName, this.lastName].join(' ');
+      }
+      return null;
+})
 userSchema.index({ email: 1 }, { unique: true });
 
 //schema basically tell what property we need to create the user object
