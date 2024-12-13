@@ -23,6 +23,9 @@ const userSchema=new mongoose.Schema({
     }
 
 },{timestamps:true});
+//create the indexing on the email 
+userSchema.index({ email: 1 }, { unique: true });
+
 //schema basically tell what property we need to create the user object
 export const userModel=mongoose.model('core_users',userSchema);//it will take two perameter and 1.model name 2.userScheam
 //a model is like the blue print based on that mongoose create the document.mongodb create take model for create the document
